@@ -1,0 +1,38 @@
+docker --version			- gives Docker version info
+docker-machine ls			- lists docker machines
+docker ps				- lists processes
+docker run hello-world			- test your enviroment
+docker build -t friendly name .		- creates Docker image with -t tag, so it has a friendly name
+docker images				- show images in current Registry
+docker-machine ip default		-  find the IP that your docker instance is using
+
+curl http://$(docker-machine ip default):4000 - run link in to a web browser
+http://192.168.99.100:4000/
+
+docker build -t friendlyhello .  # Create image using this directory's Dockerfile
+docker run -p 4000:80 friendlyhello  # create container "friendlyname" mapping port 4000 to 80
+docker run -d -p 4000:80 friendlyhello         # Same thing, but in detached mode
+docker ps                                 # See a list of all running containers/processes
+docker ps -a           # See a list of all containers, even the ones not running
+docker start <hash>                     # Gracefully start the specified container/processes
+docker stop <hash>                     # Gracefully stop the specified container/processes
+docker kill <hash>                   # Force shutdown of the specified container/process
+docker rm <hash>              # Remove the specified container from this machine
+docker rm $(docker ps -a -q)           # Remove all containers from this machine
+docker images -a                               # Show all images on this machine
+docker rmi -f <imagename>            # FORCE to Remove the specified image from this machine
+docker rmi <imagename>            # Remove the specified image from this machine
+docker rmi $(docker images -q)             # Remove all images from this machine
+docker login             # Log in this CLI session using your Docker credentials
+docker tag <image> username/repository:tag  # Tag <image> for upload to registry
+docker push username/repository:tag            # Upload tagged image to registry
+docker run username/repository:tag                   # Run image from a registry
+
+docker info
+
+
+--------------------
+docker HELP!!!
+example:
+docker rmi --help
+--------------------
