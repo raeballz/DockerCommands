@@ -9,6 +9,7 @@ docker-machine ip default			-  find the IP that your docker instance is using
 curl http://$(docker-machine ip default):4000 	- run link in to a web browser
 http://192.168.99.100:4000/
 
+<<<<<<< HEAD
 docker build -t friendlyhello .  		# Create image using this directory's Dockerfile. Remember the period!
 docker run -p 4000:80 friendlyhello  		# create container "friendlyname" mapping port 4000 to 80
 docker run -d -p 4000:80 friendlyhello  	# Same thing, but in detached mode
